@@ -1,0 +1,42 @@
+{
+  "test": "hello world",
+  "cas": {
+    "username": "",
+    "password": ""
+  },
+  "money":{
+    "paycheck": {
+      "url":""
+    },
+    "hourly":{
+      "url": "",
+      "rate":
+    }
+  },
+  "school":{
+    "canvas": "https://cas.iu.edu/cas/login?cassvc=ANY&casurl=https://canvas.iu.edu/lms-prd/login",
+    "grades":{
+      "classes":[
+        {
+          "name":"Math 26600 Ordinary Differential Equations",
+          "url": "https://iu.instructure.com/courses/1616535/grades",
+          "credits": 0,
+          "points": 0.0
+        },
+        {
+          "name":"",
+          "url": "",
+          "credits": 0,
+          "points": 0.0
+        }
+      ],
+      "lowestGrade": {
+        "name":"",
+        "grade":""
+      }
+    },
+    "baseGPA": 0,
+    "currentGPA":0.0,
+    "creditHours": 0
+  }
+}
