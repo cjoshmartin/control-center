@@ -8,7 +8,7 @@ Frequency: daily except weekends
 */
 // var casperconfig =require('../setup/casperconfig.json'); can not be found
 var casper = require('casper').create({
-  verbose : true,
+  verbose : false,
   logLevel: "debug",
   pageSettings: {
         loadImages: false,

@@ -20,7 +20,7 @@ var xpath = require("casper").selectXPath;
 
 var config = require('../config.json');
 var gobals = require('../functions/gobals.js')(casper);
-var fs =require('fs');
+
 var current={};
 var school =config.school;
 
@@ -72,7 +72,8 @@ casper.start(config.school.canvas,function () {
       casper.wait(5000,function () {
         var someshit =gradetopoints(this.fetchText('#final_letter_grade_text'));
 
-         console.log("output: " + JSON.stringify(current,null,' '));
+        console.log("output: " + JSON.stringify(current,null,' '));
+
          fs.write('../data/hourlypay.json',JSON.stringify(current,null,' '),'w');
       });
     });

@@ -1,11 +1,155 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="user/main.css">
     <meta charset="utf-8">
     <title>Update</title>
   </head>
   <body>
-    <script src="https://cdn.jsdelivr.net/g/p5.js@0.5.5(p5.min.js+addons/p5.dom.js+addons/p5.sound.js)"></script>
-    <script src="gui.js" charset="utf-8"></script>
+    <script src="user/moment-with-locales.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="user/weather.js"></script>
+    <script src="user/main.js"></script>
+    <!-- Dashboard (Parent Block)-->
+<div class="dashboard">
+  <!-- Dashboard Sidebar (Block)-->
+  <div class="dashboard-sidebar">
+
+    <!-- Dashboard Nav (Block)-->
+    <div class="dashboard-nav">
+      <ul>
+        <!-- Item (Element)-->
+        <li class="dashboard-nav__item dashboard-nav__item--selected"><a href="home"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/planner_dashboard_home.svg"/>Home</a></li>
+        <!-- Item:Selected (Element:Modifier)        -->
+        <li class="dashboard-nav__item "><a href="my_trip"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/planner_dashboard_my_trip.svg"/>Jobs</a></li>
+        <!-- Item (Element)-->
+        <li class="dashboard-nav__item"><a href="discover_places"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/planner_dashboard_discover_places.svg"/>Discover Places</a></li>
+        <!-- Item (Element)-->
+        <li class="dashboard-nav__item"><a href="notifications"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/planner_dashboard_notifications.svg"/>Notifications</a></li>
+    </div>
+  </div>
+  <!-- Dashboard Content (Block)-->
+  <div class="dashboard-content">
+    <!-- Dashboard Content Panel (Element)-->
+    <div data-panel-id="home" class="dashboard-content__panel">
+      <p>Home</p>
+    </div>
+    <!-- Dashboard Content Panel (Element)-->
+    <div data-panel-id="my_trip" class="dashboard-content__panel dashboard-content__panel--active">
+      <!-- Dashboard List (Block) -->
+      <div class="dashboard-list">
+        <!-- Dasboard List Item (Element)-->
+        <div data-item-id="kulon_progo" class="dashboard-list__item">
+          <!-- Title (Element)-->
+          <h2>Money</h2>
+            <span id="paycheck">
+            </span>
+            <span id="hourly">
+            </span>
+            <!-- !!! Need to fix -->
+            <span>
+            current bank balance : $300
+            <ul>
+              <li>chase : $100</li>
+              <li>ally (rent) : $200</li>
+            </ul>
+            </span>
+            <span>
+              debit : -$1,000
+            </span>
+        </div>
+        <!-- Dasboard List Item (Element)-->
+        <div data-item-id="bromo" class="dashboard-list__item dashboard-list__item--active">
+          <!-- Title (Element)-->
+          <h2>Grades</h2>
+          <span>
+            GPA: 3.0
+          </span>
+          <span>
+            Lowest Grade: C+ (Physics 25100)
+          </span>
+          <span id="next-test">
+          </span>
+        </div>
+        <div data-item-id="bromo" class="dashboard-list__item dashboard-list__item">
+          <!-- Title (Element)-->
+          <!-- <h2>Grades</h2> -->
+
+        </div>
+      </div>
+    </div>
+    <!-- Dashboard Content Panel (Element)-->
+    <div data-panel-id="discover_places" class="dashboard-content__panel">
+      <p>Discover Places</p>
+    </div>
+    <!-- Dashboard Content Panel (Element)-->
+    <div data-panel-id="notifications" class="dashboard-content__panel">
+      <p>Notifications</p>
+    </div>
+    <!-- Dashboard Content Panel (Element)-->
+    <div data-panel-id="settings" class="dashboard-content__panel">
+      <p>Settings</p>
+    </div>
+  </div>
+  <!-- Dashboard Preview (Block)  -->
+  <div class="dashboard-preview">
+    <!-- Panel (Element)-->
+    <div data-panel-id="kulon_progo" class="dashboard-preview__panel">
+      <!-- Content (Element)-->
+      <div class="dashboard-preview__content">
+        <section>
+          <h2>My Tasks</h2>
+          <label>
+            <input type="checkbox"/><span>Book tickets</span>
+          </label>
+          <label>
+            <input type="checkbox"/><span>Get passports ready</span>
+          </label>
+          <label>
+            <input type="checkbox"/><span>Book hotel rooms</span>
+          </label>
+        </section>
+        <section>
+          <h2>Discussion <span>(54 unread)</span></h2>
+        </section>
+      </div>
+    </div>
+    <!-- Panel (Element)-->
+    <div data-panel-id="bromo" class="dashboard-preview__panel dashboard-preview__panel--active">
+      <!-- Header (Element)-->
+      <div class="dashboard-preview__header">
+        <h2 id="location"></h2>
+        <h3 id="weather">
+        </h3>
+      </div>
+      <!-- Content (Element)-->
+      <div class="dashboard-preview__content">
+        <section>
+          <h2>My Tasks</h2>
+          <label>
+            <input type="checkbox"/><span>Prepare the Sound Recorder</span>
+          </label>
+          <label>
+            <input type="checkbox"/><span>Book a resturant</span>
+          </label>
+          <label>
+            <input type="checkbox"/><span>Book 24 hotel rooms</span>
+          </label>
+        </section>
+        <section>
+          <h2>Hours Left <span id="hoursleft"></span></h2>
+          <span>
+            slept : 9 hrs
+          </span>
+          <span>
+          | Awake : 3 hrs
+          </span>
+          <div class="progress-bar">
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>

@@ -1,0 +1,23 @@
+<div class=row>
+  <div class="col-lg-12 col-md-3">
+    <div class="card text-xs-center">
+      <div class=card-header>
+        <ul class="card-header-pills nav nav-pills pull-xs-left">
+          <li class=nav-item>
+            <a class="nav-link active"id=weather-0>Today</a>
+            <li class=nav-item><a class=nav-link id=weather-1>Wenesday</a>
+              <li class=nav-item><a class=nav-link id=weather-2>Thursday</a>
+                <li class=nav-item><a class=nav-link id=weather-3>Friday</a>
+                  <li class=nav-item><button class="btn d-inline"id=F-temp name=button type=button>F °</button>
+                    <li class=nav-item><button class="btn d-inline"id=C-temp name=button type=button>C °</button></ul>
+                    </div>
+                    <div class=card-block>
+                      <p class=card-text>
+                        <span>
+                          <img alt="'+weatherData.forecast.simpleforecast.forecastday[0].icon+'"src="'+weatherData.forecast.simpleforecast.forecastday[0].icon_url+'">'+weatherData.forecast.simpleforecast.forecastday[0].conditions+'</span>
+                          <h4 class=card-title id=current-temperature>Current Temperature '+weatherData.current_observation.temp_f+' °F</h4>
+                          <a class="btn btn-primary"href=#>Get more information</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>

@@ -6,6 +6,7 @@ description: gets paycheck information for IU network
 Status: can't not save to data.json file..
 Frequency: every two weeks
 */
+// figure out how to get imports working...
 var casper = require('casper').create();
 var xpath = require("casper").selectXPath;
 
@@ -17,7 +18,7 @@ var pay;
 var date;
 var current ={"paycheck":{}};
 casper.start(config.money.paycheck.url,function () {
-    gobals.login(config.cas);
+    gobals.login(config.cas); // logins in to cas
     this.wait(3000,function () {
       date = (this.fetchText(xpath('//table[9]/tbody/tr/td'))).trim();
       date = date.substring(0,10);
@@ -32,7 +33,8 @@ casper.start(config.money.paycheck.url,function () {
       console.log("output: " + JSON.stringify(current,null,' '));
       fs.write('../data/paycheck.json',JSON.stringify(current,null,' '),'w');
     });
-});
+  });
+// });
 
 
 casper.on("page.error", function(msg, trace) {
