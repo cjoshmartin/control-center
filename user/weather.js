@@ -45,8 +45,11 @@ $.getJSON('../config.json', function(data) {
       // Celsius=weatherData.current_observation.temp_c;
       console.log(weatherData.current_observation.observation_location.city);
 
+      $.getJSON('../url.json', function (data1) {
+        $('#location').text(weatherData.current_observation.observation_location.city + " " + data1.url);
+
+      });
       $('#weather').html(weatherData.current_observation.temp_f+'<span>F</span>');
-      $('#location').text(weatherData.current_observation.observation_location.city);
 
     }//end of success
   });//end of .ajax

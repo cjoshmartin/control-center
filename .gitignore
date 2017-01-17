@@ -5,8 +5,6 @@ data.json
 
 
 
-config.json
-
 *.wt
 
 *.2016-12-29T04-21-09Z-00000
@@ -21,9 +19,9 @@ db/journal/WiredTigerPreplog.0000000002
 
 *.bson
 
-db/WiredTiger
-
-db/WiredTiger.turtle
+data/db/*
 node_modules
 .sync
 scrapping_scripts/._files
+
+url.json

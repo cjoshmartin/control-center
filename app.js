@@ -1,21 +1,22 @@
 // HTTP Portion
-var http = require('http');
 var express = require('express');
 var server = express();
 var ngrok = require('ngrok');
 
-// Path module
-var path = require('path');
-
-// Using the filesystem module
-var fs = require('fs');
-// make things pretty
-var colors = require('colors/safe');
-
+// Database
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
 // Connection URL
 var mongoUrl = 'mongodb://localhost:27017';
+
+// Path module
+var path = require('path');
+// Using the filesystem module
+var fs = require('fs');
+
+// make things pretty
+var colors = require('colors/safe');
+
 //
 // // Use connect method to connect to the server
 // MongoClient.connect(url, function(err, db) {
@@ -51,11 +52,16 @@ ngrok.connect({
     authtoken: 'fPwThdHPDVNGVT3wauhj_2osUyxQu3g79t5fEgC7Ti', // your authtoken from ngrok.com
     region: 'us' // one of ngrok regions (us, eu, au, ap), defaults to us
 }, function (err, url) {
-    var current ={};
-    current.ngrok =url;
-    var pathess =path.join(__dirname,'./link.json');
-    console.log("output: " + JSON.stringify(current,null,' '));
-    // fs.write(pathess,JSON.stringify(current,null,' '),'w'); IDK
+    // MongoClient.connect(mongoUrl, function (err, db) {
+    //     var urls = db.collection('urls')
+    //     urls.insert({url:url})
+    // })
+    //save url to json file
+    var urls={};
+    urls.url =url;
+    fs.writeFile('url.json', JSON.stringify(urls))
+
+    // display the links in commandline
     console.log("Go to : "+colors.red(url));
     console.log("ngrok interface:"+ colors.red(" http://127.0.0.1:4040"));
 });
