@@ -61,8 +61,8 @@ var current={};
   casper.start('https://mint.intuit.com/login.event?referrer=seo&soc=&utm=',function () {
       this.wait(5000,function () {
       this.echo('filling form...');
-      this.sendKeys('input[id=ius-userid]','joshmartin5001@gmail.com');
-      this.sendKeys('input[id=ius-password]','SpiKey78');
+      this.sendKeys('input[id=ius-userid]','');
+      this.sendKeys('input[id=ius-password]','');
       this.click('#ius-sign-in-submit-btn');
         this.wait(5000,function () {
           this.echo("Taking a screenshot now");
